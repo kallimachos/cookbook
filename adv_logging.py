@@ -18,7 +18,7 @@ import logging
 import logging.config
 
 # load conf file
-logging.config.fileConfig('adv_logging.conf')
+logging.config.fileConfig('example.conf')
 
 # create logger
 logger = logging.getLogger('simpleExample')
