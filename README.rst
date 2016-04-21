@@ -12,3 +12,36 @@ Python Cookbook
    :target: http://opensource.org/licenses/GPL-3.0
 
 A collection of Python recipes.
+
+args.py
+~~~~~~~
+
+file.py
+~~~~~~~
+
+progressbar.py
+~~~~~~~~~~~~~~
+
+sqlite.py
+~~~~~~~~~
+
+colour.py
+~~~~~~~~~
+
+safeprint.py
+~~~~~~~~~~~~
+
+test.py
+~~~~~~~
+
+adv_logging.py
+~~~~~~~~~~~~~~
+
+doctest.py
+~~~~~~~~~~~~~~~~~
+
+log.py
+~~~~~~
+
+sh.py
+~~~~~

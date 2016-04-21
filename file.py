@@ -1,4 +1,5 @@
 #!/bin/python3
+
 # gets input and writes it to a file
 
 readme = input("Enter some text: ")

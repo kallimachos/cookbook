@@ -1,7 +1,10 @@
-# -*- coding: utf-8 -*-
-import os
+#!/bin/python3
+
 import codecs
+
+import os
 import sys
+
 
 def safe_print(text):
     '''
@@ -16,6 +19,7 @@ def safe_print(text):
     wrapped_stdout = codec.streamwriter(sys.stdout, errors='replace')
     wrapped_stdout.write(text)
     wrapped_stdout.write('\n')
+
 
 def test_safe_print():
     '''

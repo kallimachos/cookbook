@@ -1,13 +1,13 @@
-#!/usr/bin/python
+#!/bin/python3
 # -*- coding: utf-8 -*-
 
 import sys
 import time
 
-from progressbar import AnimatedMarker, Bar, BouncingBar, Counter, ETA, \
-    FileTransferSpeed, FormatLabel, Percentage, \
-    ProgressBar, ReverseBar, RotatingMarker, \
-    SimpleProgress, Timer
+from progressbar import (ETA, AnimatedMarker, Bar, BouncingBar, Counter,
+                         FileTransferSpeed, FormatLabel, Percentage,
+                         ProgressBar, ReverseBar, RotatingMarker,
+                         SimpleProgress, Timer)
 
 examples = []
 def example(fn):
