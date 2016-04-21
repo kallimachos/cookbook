@@ -1,7 +1,7 @@
-#!/bin/python
+#!/bin/python3
 
-#===========================================================
-# Logging
+# Advanced logging example using a conf file
+
 #-----------------------------------------------------------
 # Log levels
 
@@ -18,7 +18,7 @@ import logging
 import logging.config
 
 # load conf file
-logging.config.fileConfig('example.conf')
+logging.config.fileConfig('log.conf')
 
 # create logger
 logger = logging.getLogger('simpleExample')
