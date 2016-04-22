@@ -1,6 +1,5 @@
 #!/bin/python3
-
-# gets input and writes it to a file
+"""Read input from command line and write it to a file."""
 
 readme = input("Enter some text: ")
 with open('example.txt', 'w') as f:

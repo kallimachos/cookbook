@@ -1,9 +1,11 @@
 #!/bin/python3
+"""Basic sqlite example."""
 
-import sqlite3  # Import the SQLite3 module
+# Import the SQLite3 module
+import sqlite3
 
 try:
-    # Creates or opens a file called mydb with a SQLite3 DB
+    # Create or open a file called mydb with a SQLite3 DB
     db = sqlite3.connect('data/mydb')
     # Get a cursor object
     cursor = db.cursor()

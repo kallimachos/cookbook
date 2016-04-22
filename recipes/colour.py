@@ -1,6 +1,5 @@
 #!/bin/python3
-
-# Codes for coloured console output
+"""Escape codes for coloured console output."""
 
 purple = '\033[95m'
 blue = '\033[94m'

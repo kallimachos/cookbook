@@ -1,5 +1,5 @@
 #!/bin/python3
-# -*- coding: utf-8 -*-
+"""Example usage of the progressbar module."""
 
 import sys
 import time
@@ -13,6 +13,7 @@ examples = []
 
 
 def example(fn):
+    """Base example function."""
     try:
         name = 'Example %d' % int(fn.__name__[7:])
     except:
@@ -32,6 +33,7 @@ def example(fn):
 
 @example
 def example0():
+    """Display percentage progress bar."""
     pbar = ProgressBar(widgets=[Percentage(), Bar()], maxval=300).start()
     for i in range(300):
         time.sleep(0.01)
@@ -41,6 +43,7 @@ def example0():
 
 @example
 def example1():
+    """Display ."""
     widgets = ['Test: ', Percentage(), ' ', Bar(marker=RotatingMarker()),
                ' ', ETA(), ' ', FileTransferSpeed()]
     pbar = ProgressBar(widgets=widgets, maxval=10000000).start()
@@ -52,8 +55,10 @@ def example1():
 
 @example
 def example2():
+    """Display ."""
     class CrazyFileTransferSpeed(FileTransferSpeed):
         """It's bigger between 45 and 80 percent."""
+
         def update(self, pbar):
             if 45 < pbar.percentage() < 80:
                 return 'Bigger Now ' + FileTransferSpeed.update(self, pbar)
@@ -73,6 +78,7 @@ def example2():
 
 @example
 def example3():
+    """Display ."""
     widgets = [Bar('>'), ' ', ETA(), ' ', ReverseBar('<')]
     pbar = ProgressBar(widgets=widgets, maxval=10000000).start()
     for i in range(1000000):
@@ -83,6 +89,7 @@ def example3():
 
 @example
 def example4():
+    """Display ."""
     widgets = ['Test: ', Percentage(), ' ',
                Bar(marker='0', left='[', right=']'),
                ' ', ETA(), ' ', FileTransferSpeed()]
@@ -96,6 +103,7 @@ def example4():
 
 @example
 def example5():
+    """Display ."""
     pbar = ProgressBar(widgets=[SimpleProgress()], maxval=17).start()
     for i in range(17):
         time.sleep(0.2)
@@ -105,6 +113,7 @@ def example5():
 
 @example
 def example6():
+    """Display ."""
     pbar = ProgressBar().start()
     for i in range(100):
         time.sleep(0.01)
@@ -114,6 +123,7 @@ def example6():
 
 @example
 def example7():
+    """Display ."""
     pbar = ProgressBar()  # Progressbar can guess maxval automatically.
     for i in pbar(range(80)):
         time.sleep(0.01)
@@ -121,6 +131,7 @@ def example7():
 
 @example
 def example8():
+    """Display ."""
     pbar = ProgressBar(maxval=80)  # Progressbar can't guess maxval.
     for i in pbar((i for i in range(80))):
         time.sleep(0.01)
@@ -128,6 +139,7 @@ def example8():
 
 @example
 def example9():
+    """Display ."""
     pbar = ProgressBar(widgets=['Working: ', AnimatedMarker()])
     for i in pbar((i for i in range(50))):
         time.sleep(.08)
@@ -135,6 +147,7 @@ def example9():
 
 @example
 def example10():
+    """Display ."""
     widgets = ['Processed: ', Counter(), ' lines (', Timer(), ')']
     pbar = ProgressBar(widgets=widgets)
     for i in pbar((i for i in range(150))):
@@ -143,6 +156,7 @@ def example10():
 
 @example
 def example11():
+    """Display ."""
     widgets = [FormatLabel('Processed: %(value)d lines (in: %(elapsed)s)')]
     pbar = ProgressBar(widgets=widgets)
     for i in pbar((i for i in range(150))):
@@ -151,6 +165,7 @@ def example11():
 
 @example
 def example12():
+    """Display ."""
     widgets = ['Balloon: ', AnimatedMarker(markers='.oO@* ')]
     pbar = ProgressBar(widgets=widgets)
     for i in pbar((i for i in range(24))):
@@ -159,7 +174,7 @@ def example12():
 
 @example
 def example13():
-    # You may need python 3.x to see this correctly
+    """Display ."""
     try:
         widgets = ['Arrows: ', AnimatedMarker(markers='????????')]
         pbar = ProgressBar(widgets=widgets)
@@ -171,7 +186,7 @@ def example13():
 
 @example
 def example14():
-    # You may need python 3.x to see this correctly
+    """Display ."""
     try:
         widgets = ['Arrows: ', AnimatedMarker(markers='????')]
         pbar = ProgressBar(widgets=widgets)
@@ -183,7 +198,7 @@ def example14():
 
 @example
 def example15():
-    # You may need python 3.x to see this correctly
+    """Display ."""
     try:
         widgets = ['Wheels: ', AnimatedMarker(markers='????')]
         pbar = ProgressBar(widgets=widgets)
@@ -195,6 +210,7 @@ def example15():
 
 @example
 def example16():
+    """Display ."""
     widgets = [FormatLabel('Bouncer: value %(value)d - '), BouncingBar()]
     pbar = ProgressBar(widgets=widgets)
     for i in pbar((i for i in range(180))):
@@ -203,6 +219,7 @@ def example16():
 
 @example
 def example17():
+    """Display ."""
     widgets = [FormatLabel('Animated Bouncer: value %(value)d - '),
                BouncingBar(marker=RotatingMarker())]
 
@@ -212,6 +229,7 @@ def example17():
 
 # @example
 # def example18():
+#     """Display ."""
 #     widgets = [Percentage(),
 #                ' ', Bar(),
 #                ' ', ETA(),
@@ -225,6 +243,7 @@ def example17():
 
 # @example
 # def example19():
+#     """Display ."""
 #     pbar = ProgressBar()
 #     for i in pbar([]):
 #         pass

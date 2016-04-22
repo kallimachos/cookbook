@@ -1,6 +1,5 @@
 #!/bin/python3
-
-# Advanced logging example using a conf file
+"""Example usage of the loggin module with a configuration file."""
 
 # Log levels
 # DEBUG    Detailed information, typically of interest only when diagnosing

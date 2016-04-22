@@ -1,6 +1,5 @@
 #!/bin/python3
-
-# Argparse example
+"""Example usage of the argparse module."""
 
 import argparse
 

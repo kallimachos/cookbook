@@ -1,6 +1,5 @@
 #!/bin/python3
-
-# Logging
+"""Basic example using the logging module."""
 
 # Log levels
 # DEBUG    Detailed information, typically of interest only when diagnosing
@@ -14,7 +13,6 @@
 # CRITICAL A serious error, indicating that the program itself may be unable to
 #          continue running.
 
-# Simple logging example
 import logging
 
 logging.basicConfig(level=logging.DEBUG,

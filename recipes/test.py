@@ -7,6 +7,7 @@ Run using 'py.test pytest.py'
 
 # Functions to be tested.
 
+
 def add(x):
     """
     Return x +1.
@@ -35,6 +36,7 @@ def mystring():
 
 
 # Tests in pytest format.
+
 
 def test_add():
     """Test add."""
