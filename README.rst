@@ -13,35 +13,41 @@ Python Cookbook
 
 A collection of Python recipes.
 
+adv_logging.py
+~~~~~~~~~~~~~~
+
+
 args.py
 ~~~~~~~
 
-file.py
-~~~~~~~
-
-progressbar.py
-~~~~~~~~~~~~~~
-
-sqlite.py
-~~~~~~~~~
 
 colour.py
 ~~~~~~~~~
 
-safeprint.py
-~~~~~~~~~~~~
 
-test.py
+file.py
 ~~~~~~~
 
-adv_logging.py
-~~~~~~~~~~~~~~
-
-doctest.py
-~~~~~~~~~~~~~~~~~
 
 log.py
 ~~~~~~
 
+
+progressbar.py
+~~~~~~~~~~~~~~
+
+
+safeprint.py
+~~~~~~~~~~~~
+
+
 sh.py
 ~~~~~
+
+
+sqlite.py
+~~~~~~~~~
+
+
+test.py
+~~~~~~~
