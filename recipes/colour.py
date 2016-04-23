@@ -8,5 +8,6 @@ yellow = '\033[93m'
 red = '\033[91m'
 end = '\033[0m'
 
-print("Hello! " + purple + 'This ' + blue + 'is ' + green + 'an ' + yellow +
-      'example ' + red + 'sentence. ' + end + 'Hooray!')
+if __name__ == '__main__':
+    print("Hello! " + purple + 'This ' + blue + 'is ' + green + 'an ' +
+          yellow + 'example ' + red + 'sentence. ' + end + 'Hooray!')

@@ -1,5 +1,8 @@
 #!/bin/python3
-"""Example usage of the loggin module with a configuration file."""
+"""Example usage of the logging module with a configuration file."""
+
+import logging
+import logging.config
 
 # Log levels
 # DEBUG    Detailed information, typically of interest only when diagnosing
@@ -13,19 +16,17 @@
 # CRITICAL A serious error, indicating that the program itself may be unable to
 #          continue running.
 
-# Advanced logging example that creates a logger using a conf file
-import logging
-import logging.config
 
-# load conf file
-logging.config.fileConfig('log.conf')
+if __name__ == '__main__':
+    # load conf file
+    logging.config.fileConfig('log.conf')
 
-# create logger
-logger = logging.getLogger('simpleExample')
+    # create logger
+    logger = logging.getLogger('simpleExample')
 
-# invoke logging in code
-logger.debug('debug message')
-logger.info('info message')
-logger.warn('warn message')
-logger.error('error message')
-logger.critical('critical message')
+    # invoke logging in code
+    logger.debug('debug message')
+    logger.info('info message')
+    logger.warn('warn message')
+    logger.error('error message')
+    logger.critical('critical message')

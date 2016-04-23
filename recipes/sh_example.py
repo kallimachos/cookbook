@@ -11,7 +11,8 @@ def echo():
 
 def test_echo():
     """Test echo function."""
-    assert echo() == 'hello'
+    result = echo()
+    assert result == 'hello\n'
 
 
 if __name__ == '__main__':
