@@ -3,4 +3,16 @@
 
 import sh
 
-print(sh.ls("/"))
+
+def echo():
+    """Use sh module to run bash echo command."""
+    return(sh.echo('hello'))
+
+
+def test_echo():
+    """Test echo function."""
+    assert echo() == 'hello'
+
+
+if __name__ == '__main__':
+    print(sh.ls('.'))

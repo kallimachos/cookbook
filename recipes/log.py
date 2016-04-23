@@ -1,6 +1,9 @@
 #!/bin/python3
 """Basic example using the logging module."""
 
+import logging
+from os import path, remove
+
 # Log levels
 # DEBUG    Detailed information, typically of interest only when diagnosing
 #          problems.
@@ -13,7 +16,6 @@
 # CRITICAL A serious error, indicating that the program itself may be unable to
 #          continue running.
 
-import logging
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
@@ -29,3 +31,10 @@ message = 'variables'
 number = 5
 logging.critical('This is a critical message about %s using %s',
                  number, message)
+
+
+def test_cleanup():
+    """Remove example.log file."""
+    if path.exists('example.log'):
+        remove('example.log')
+    assert True is True
