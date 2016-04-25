@@ -611,12 +611,7 @@ def example29():
 
 
 def run():
-    """
-    Display progess bar examples.
-
-    >>> run()
-    True
-    """
+    """Display progess bar examples."""
     for example in examples:
         example()
     return True
