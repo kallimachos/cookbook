@@ -15,7 +15,7 @@ examples = []
 
 
 def example(fn):
-    """Display progess bar using tqdm."""
+    """Display progess bars."""
     def wrapped():
         try:
             sys.stdout.write('Running: %s\n' % fn.__name__)
