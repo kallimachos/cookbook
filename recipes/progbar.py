@@ -440,7 +440,7 @@ def with_example21a():
     True
     """
     with ProgressBar(max_value=1, redirect_stdout=True) as progress:
-        print('', file=sys.stdout)
+        print('', sys.stdout)
         progress.update(0)
     return True
 
@@ -454,7 +454,7 @@ def with_example21b():
     True
     """
     with ProgressBar(max_value=1, redirect_stderr=True) as progress:
-        print('', file=sys.stderr)
+        print('', sys.stderr)
         progress.update(0)
     return True
 
@@ -615,6 +615,11 @@ def run():
     for example in examples:
         example()
     return True
+
+
+def test():
+    """Run tests."""
+    assert run() is True
 
 
 if __name__ == '__main__':
