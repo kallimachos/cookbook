@@ -47,6 +47,13 @@ def source():
     return result
 
 
+def output(html):
+    """Write html to file."""
+    with open('output.html', 'w') as f:
+        f.write(html)
+    return True
+
+
 def gfm(text):
     """
     Github flavoured markdown.
@@ -102,6 +109,7 @@ if __name__ == '__main__':
     text = source()
     print("\n" + green + "Standard Markdown:" + end)
     print(mkdown(text) + "\n")
+    # output(mkdown(text))
     print(green + "GitHub flavoured Markdown:" + end)
     print(gfmkdown(text) + "\n")
     print(green + "MD converted to RST using pypandoc:" + end)
