@@ -9,7 +9,7 @@ and the pypandoc module.
 import re
 
 import pypandoc
-from markdown import markdown
+from markdown import markdown, markdownFromFile
 
 try:
     from hashlib import md5 as md5_func
@@ -17,10 +17,19 @@ except ImportError:
     from md5 import new as md5_func
 
 
-def mkdown(mkstring):
+def mkdown(mdtext):
     """Convert MD to HTML using the markdown module and tables extension."""
-    htmltext = markdown(mkstring, extensions=['markdown.extensions.tables'])
-    return htmltext
+    html = markdown(mdtext, extensions=['markdown.extensions.tables'])
+    return html
+
+
+def directmkdown(mdfile):
+    """
+    Convert MD to HTML from a file using the markdown module and tables
+    extension.
+    """
+    html = markdownFromFile(mdfile, extensions=['markdown.extensions.tables'])
+    return html
 
 
 def gfmkdown(mkstring):
@@ -40,16 +49,16 @@ def pandoc(mkstring):
     return output
 
 
-def source():
+def source(mdfile):
     """Open a file containing example MD text."""
-    with open('example.md', 'r') as f:
+    with open(mdfile, 'r') as f:
         result = f.read()
     return result
 
 
-def output(html):
+def output(htmlfile, html):
     """Write html to file."""
-    with open('output.html', 'w') as f:
+    with open(htmlfile, 'w') as f:
         f.write(html)
     return True
 
@@ -106,11 +115,13 @@ def gfm(text):
 if __name__ == '__main__':
     green = '\033[92m'
     end = '\033[0m'
-    text = source()
+    mdfile = "example.md"
+    mdtext = source(mdfile)
     print("\n" + green + "Standard Markdown:" + end)
-    print(mkdown(text) + "\n")
-    # output(mkdown(text))
-    print(green + "GitHub flavoured Markdown:" + end)
-    print(gfmkdown(text) + "\n")
+    print(mkdown(mdtext) + "\n")
+    print(green + "Standard Markdown direct from file:" + end)
+    print(directmkdown(mdfile))
+    print("\n" + green + "GitHub flavoured Markdown:" + end)
+    print(gfmkdown(mdtext) + "\n")
     print(green + "MD converted to RST using pypandoc:" + end)
-    print(pandoc(text))
+    print(pandoc(mdtext))
