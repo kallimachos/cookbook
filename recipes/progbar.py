@@ -9,9 +9,11 @@ from progressbar import (ETA, AbsoluteETA, AdaptiveETA, AdaptiveTransferSpeed,
                          FileTransferSpeed, FormatLabel, Percentage,
                          ProgressBar, ReverseBar, RotatingMarker,
                          SimpleProgress, Timer)
+from pytest import mark
 from tqdm import tqdm
 
 examples = []
+pytestmark = mark.skip()
 
 
 def example(fn):

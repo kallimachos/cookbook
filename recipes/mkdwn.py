@@ -24,10 +24,7 @@ def mkdown(mdtext):
 
 
 def directmkdown(mdfile):
-    """
-    Convert MD to HTML from a file using the markdown module and tables
-    extension.
-    """
+    """Convert MD file to HTML using markdown module and tables extension."""
     html = markdownFromFile(mdfile, extensions=['markdown.extensions.tables'])
     return html
 
