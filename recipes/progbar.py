@@ -13,6 +13,9 @@ from pytest import mark
 from tqdm import tqdm
 
 examples = []
+
+# Testing the progbars is a bit slow, so we'll skip them.
+# Comment the following line if testing of progbar.py is required.
 pytestmark = mark.skip()
 
 
