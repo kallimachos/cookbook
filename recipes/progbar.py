@@ -1,4 +1,5 @@
 #!/bin/python3
+# -*- coding: utf-8 -*-
 """Example usage of the tqdm and progressbar2 modules."""
 
 import sys
