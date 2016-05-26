@@ -1,0 +1,16 @@
+doc8
+flake8
+isort
+markdown
+pep8-naming
+pep257
+progressbar2
+pyenchant
+pypandoc
+pytest
+pytest-cov
+sh
+sphinx
+sphinxcontrib-spelling
+sphinx_rtd_theme
+tqdm

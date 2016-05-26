@@ -1,0 +1,5 @@
+2016-05-26 19:58:16 DEBUG This is a debug message
+2016-05-26 19:58:16 INFO This is an info message
+2016-05-26 19:58:16 WARNING This is a warning message
+2016-05-26 19:58:16 ERROR This is an error message
+2016-05-26 19:58:16 CRITICAL This is a critical message about 5 using variables

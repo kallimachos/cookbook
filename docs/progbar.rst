@@ -1,0 +1,6 @@
+=======
+progbar
+=======
+
+.. automodule:: progbar
+   :members:

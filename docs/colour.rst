@@ -1,0 +1,6 @@
+======
+colour
+======
+
+.. automodule:: colour
+   :members:

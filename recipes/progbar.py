@@ -1,4 +1,5 @@
 #!/bin/python3
+# -*- coding: utf-8 -*-
 """Example usage of the tqdm and progressbar2 modules."""
 
 import sys
@@ -20,7 +21,7 @@ pytestmark = mark.skip(reason="Testing progbars takes a long time")
 
 
 def example(fn):
-    """Display progess bars."""
+    """Display progress bars."""
     def wrapped():
         try:
             sys.stdout.write('Running: %s\n' % fn.__name__)
@@ -36,7 +37,7 @@ def example(fn):
 @example
 def example99():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example99()
     True
@@ -49,7 +50,7 @@ def example99():
 @example
 def example0():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example0()
     True
@@ -65,7 +66,7 @@ def example0():
 @example
 def with_example0():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> with_example0()
     True
@@ -80,7 +81,7 @@ def with_example0():
 @example
 def example1():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example1()
     True
@@ -98,7 +99,7 @@ def example1():
 @example
 def with_example1():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> with_example1()
     True
@@ -113,21 +114,21 @@ def with_example1():
 @example
 def example2():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example2()
     True
     """
     class CrazyFileTransferSpeed(FileTransferSpeed):
         """
-        Display progess bar using tqdm.
+        Display progress bar using tqdm.
 
         It's bigger between 45 and 80 percent.
         """
 
         def update(self, pbar):
             """
-            Display progess bar using tqdm.
+            Display progress bar using tqdm.
 
             >>> update()
             True
@@ -152,7 +153,7 @@ def example2():
 @example
 def example3():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example3()
     True
@@ -169,7 +170,7 @@ def example3():
 @example
 def example4():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example4()
     True
@@ -189,7 +190,7 @@ def example4():
 @example
 def example5():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example5()
     True
@@ -205,7 +206,7 @@ def example5():
 @example
 def example6():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example6()
     True
@@ -221,7 +222,7 @@ def example6():
 @example
 def example7():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example7()
     True
@@ -235,7 +236,7 @@ def example7():
 @example
 def example8():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example8()
     True
@@ -249,7 +250,7 @@ def example8():
 @example
 def example9():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example9()
     True
@@ -263,7 +264,7 @@ def example9():
 @example
 def example10():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example10()
     True
@@ -278,7 +279,7 @@ def example10():
 @example
 def example11():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example11()
     True
@@ -293,7 +294,7 @@ def example11():
 @example
 def example12():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example12()
     True
@@ -308,7 +309,7 @@ def example12():
 @example
 def example13():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example13()
     True
@@ -327,7 +328,7 @@ def example13():
 @example
 def example14():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example14()
     True
@@ -346,7 +347,7 @@ def example14():
 @example
 def example15():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example15()
     True
@@ -365,7 +366,7 @@ def example15():
 @example
 def example16():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example16()
     True
@@ -380,7 +381,7 @@ def example16():
 @example
 def example17():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example17()
     True
@@ -396,7 +397,7 @@ def example17():
 
 # @example
 # def with_example18():
-#     """Display progess bar using tqdm."""
+#     """Display progress bar using tqdm."""
 #     with ProgressBar(max_value=10, term_width=20, left_justify=False) as \
 #             progress:
 #         assert progress._env_size() is not None
@@ -407,7 +408,7 @@ def example17():
 @example
 def with_example19():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example19()
     True
@@ -423,7 +424,7 @@ def with_example19():
 @example
 def with_example20():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example20()
     True
@@ -439,7 +440,7 @@ def with_example20():
 @example
 def with_example21a():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example21a()
     True
@@ -453,7 +454,7 @@ def with_example21a():
 @example
 def with_example21b():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example21b()
     True
@@ -467,7 +468,7 @@ def with_example21b():
 @example
 def with_example22():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example22()
     True
@@ -483,7 +484,7 @@ def with_example22():
 @example
 def example23():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example23()
     True
@@ -505,7 +506,7 @@ def example23():
 @example
 def example24():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example24()
     True
@@ -522,7 +523,7 @@ def example24():
 @example
 def example25():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example25()
     True
@@ -541,7 +542,7 @@ def example25():
 @example
 def example26():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example26()
     True
@@ -565,7 +566,7 @@ def example26():
 @example
 def example27():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example27()
     True
@@ -584,7 +585,7 @@ def example27():
 @example
 def example28():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example28()
     True
@@ -601,7 +602,7 @@ def example28():
 @example
 def example29():
     """
-    Display progess bar using tqdm.
+    Display progress bar using tqdm.
 
     >>> example29()
     True
@@ -610,13 +611,13 @@ def example29():
     pbar = ProgressBar(widgets=widgets, maxval=500).start()
     for i in range(500):
         sleep(0.01)
-        pbar.update(i+1)
+        pbar.update(i + 1)
     pbar.finish()
     return True
 
 
 def run():
-    """Display progess bar examples."""
+    """Display progress bar examples."""
     for example in examples:
         example()
     return True
