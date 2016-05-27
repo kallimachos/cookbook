@@ -5,3 +5,4 @@ __pycache__/
 MANIFEST
 .coverage
 _build/
+example.log
