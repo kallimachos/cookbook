@@ -2,6 +2,8 @@
 Welcome to Cookbook's documentation!
 ====================================
 
+*Last updated:* |today|
+
 Contents
 ~~~~~~~~
 
