@@ -1,9 +1,5 @@
 doc8
-flake8
-isort
 markdown
-pep8-naming
-pep257
 progressbar2
 pyenchant
 pypandoc

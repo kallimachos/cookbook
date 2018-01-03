@@ -73,7 +73,7 @@ def mkdown(mdtext):
 
 
 def test_mkdown():
-    """Test mdown."""
+    """Test mkdown."""
     assert mkdown(samplemd) == samplehtml
 
 

@@ -11,13 +11,14 @@ Contents
    :maxdepth: 2
 
    adv_logging.rst
+   args.rst
    colour.rst
    db.rst
    file.rst
    log.rst
-   progbar.rst
-   args.rst
    mkdwn.rst
+   pp_json.rst
+   progbar.rst
    sh_example.rst
    test.rst
 
