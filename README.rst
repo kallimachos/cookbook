@@ -5,7 +5,7 @@ Python Cookbook
 .. image:: https://travis-ci.org/kallimachos/cookbook.svg?branch=master
    :target: https://travis-ci.org/kallimachos/cookbook
 
-.. image:: https://img.shields.io/badge/Python-3.4-brightgreen.svg?style=flat
+.. image:: https://img.shields.io/badge/Python-3.6-brightgreen.svg?style=flat
    :target: http://python.org
 
 .. image:: http://img.shields.io/badge/license-GPL-blue.svg?style=flat
@@ -39,6 +39,10 @@ mkdwn.py
 
 progressbar.py
 ~~~~~~~~~~~~~~
+
+
+pp_json.py
+~~~~~~~~~~
 
 
 safeprint.py
