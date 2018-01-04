@@ -1,6 +1,0 @@
-====
-file
-====
-
-.. automodule:: file
-   :members:
