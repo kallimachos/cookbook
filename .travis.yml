@@ -1,11 +1,9 @@
 language: python
-python:
-  - "3.4"
-install:
-  - pip install tox
-script:
-  - tox
+python: "3.6"
+install: pip install tox
+script: tox
 addons:
   apt:
     packages:
     - enchant
+after_success: ./tools/deploy.sh
