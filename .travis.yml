@@ -6,4 +6,5 @@ addons:
   apt:
     packages:
     - enchant
+    - pandoc
 after_success: ./tools/deploy.sh
