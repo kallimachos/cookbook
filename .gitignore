@@ -6,3 +6,4 @@ MANIFEST
 .coverage
 _build/
 example.log
+.pytest_cache/

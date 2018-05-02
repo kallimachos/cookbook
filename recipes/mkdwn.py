@@ -65,6 +65,31 @@ This is an <em>emphasized</em> word.</p>
 </table>
 <p><code>What about code blocks?</code></p>"""
 
+samplerst = """Heading 1
+=========
+
+This is some text
+
+Heading 2
+---------
+
+This is some more text. This is an *emphasized* word.
+
++---------------+---------------+-------+
+| Tables        | Are           | Cool  |
++===============+===============+=======+
+| col 3 is      | right-aligned | $1600 |
++---------------+---------------+-------+
+| col 2 is      | centered      | $12   |
++---------------+---------------+-------+
+| zebra stripes | are neat      | $1    |
++---------------+---------------+-------+
+
+::
+
+    What about code blocks?
+"""
+
 
 def mkdown(mdtext):
     """Convert MD to HTML using the markdown module and tables extension."""
@@ -103,10 +128,9 @@ def mkpandoc(mkstring):
     return output
 
 
-@pytest.mark.xfail(raises=OSError, reason="OSError: pandoc install fail")
 def test_mkpandoc():
     """Test pandoc."""
-    assert mkpandoc(samplemd) == samplehtml
+    assert mkpandoc(samplemd) == samplerst
 
 
 def source(mdfile):
