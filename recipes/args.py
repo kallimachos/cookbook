@@ -1,5 +1,7 @@
 #!/bin/python3
-"""Example usage of the argparse module."""
+"""Example usage of the argparse module.
+
+See raven.py and cricket.py for other examples."""
 
 import argparse
 
