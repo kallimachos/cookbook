@@ -11,3 +11,4 @@ sphinx
 sphinxcontrib-spelling
 sphinx_rtd_theme
 tqdm
+yaspin
