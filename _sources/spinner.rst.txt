@@ -1,0 +1,6 @@
+=======
+spinner
+=======
+
+.. automodule:: spinner
+   :members:

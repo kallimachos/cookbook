@@ -20,6 +20,7 @@ Contents
    pp_json.rst
    progbar.rst
    sh_example.rst
+   spinner.rst
    test.rst
 
 
