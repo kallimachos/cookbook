@@ -1,4 +1,5 @@
 doc8
+hypothesis
 markdown
 progressbar2
 pyenchant

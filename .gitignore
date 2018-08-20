@@ -7,3 +7,4 @@ MANIFEST
 _build/
 example.log
 .pytest_cache/
+.hypothesis/

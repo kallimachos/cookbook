@@ -1,13 +1,15 @@
 #!/bin/python3
 """
-Pytest examples.
+Pytest and hypothesis examples.
 
 Run using 'py.test pytest.py'
 """
 
+from hypothesis import given
+from hypothesis.strategies import integers, text
+
+
 # Functions to be tested.
-
-
 def add(x):
     """
     Return x +1.
@@ -30,33 +32,35 @@ def square(x):
     return x * x
 
 
-def mystring():
-    """Return This is a string."""
-    return 'This is a string.'
+def mystring(s):
+    """Return s."""
+    return s
 
 
-# Tests in pytest format.
+# Tests in pytest format using hypothesis data generation
 
-
-def test_add():
+@given(integers())
+def test_add(i):
     """Test add."""
-    assert add(3) == 4
+    assert add(i) == i + 1
 
 
-def test_square():
+@given(integers())
+def test_square(i):
     """Test square."""
-    assert square(5) == 25
+    assert square(i) == i * i
 
 
-def test_mystring():
+@given(text())
+def test_mystring(s):
     """Test string."""
-    x = mystring()
+    x = mystring(s)
     assert isinstance(x, str)
 
 
 def test_less_than():
     """Test a less than equation."""
-    assert 4 < 5
+    assert 2 < 5
 
 
 def test_repeat():
