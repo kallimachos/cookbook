@@ -38,7 +38,7 @@ Use ; for multiple values: \033[96;4m
 8 	    Conceal
 9 	    Crossed-out
 10 	    Primary(default) font
-11–19 	Alternative font 	Select alternative font n − 10 {\displaystyle n-10} {\displaystyle n-10}
+11–19 	Alternative font 	Select alternative font n − 10
 20 	    Fraktur 	Rarely supported
 21 	    Doubly underline or Bold off
 22 	    Normal color or intensity
@@ -70,5 +70,5 @@ Use ; for multiple values: \033[96;4m
 """
 
 if __name__ == '__main__':
-    print("Hello! " + purple + 'This ' + blue + 'is ' + green + 'an ' +
-          yellow + 'example ' + red + 'sentence. ' + end + 'Hooray!')
+    print("Hello! %sThis %sis %san %example %ssentence. %sHooray!"
+          % (blue, green, yellow, red, purple, end))
