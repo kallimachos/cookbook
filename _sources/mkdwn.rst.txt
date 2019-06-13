@@ -1,6 +1,0 @@
-=====
-mkdwn
-=====
-
-.. automodule:: mkdwn
-   :members:

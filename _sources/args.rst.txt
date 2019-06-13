@@ -1,6 +1,0 @@
-====
-args
-====
-
-.. automodule:: args
-   :members:

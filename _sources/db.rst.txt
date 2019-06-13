@@ -1,6 +1,0 @@
-==
-db
-==
-
-.. automodule:: db
-   :members:
