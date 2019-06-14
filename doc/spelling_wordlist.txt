@@ -2,9 +2,14 @@ coloured
 createdb
 createfile
 directmkdown
+Fraktur
 html
 Indices
 mdown
+mkdown
+Overlined
+overline
+overlined
 pandoc
 progressbar
 py
