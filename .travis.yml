@@ -2,7 +2,9 @@ dist: xenial
 language: python
 python: "3.7"
 install: pip install tox
-script: tox
+script:
+  - tox
+  - tox -e doc
 addons:
   apt:
     packages:
