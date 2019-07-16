@@ -39,6 +39,7 @@ def mystring(s):
 
 # Tests in pytest format using hypothesis data generation
 
+
 @given(integers())
 def test_add(i):
     """Test add."""

@@ -93,7 +93,7 @@ This is some more text. This is an *emphasized* word.
 
 def mkdown(mdtext):
     """Convert MD to HTML using the markdown module and tables extension."""
-    html = markdown(mdtext, extensions=['markdown.extensions.tables'])
+    html = markdown(mdtext, extensions=["markdown.extensions.tables"])
     return html
 
 
@@ -104,7 +104,7 @@ def test_mkdown():
 
 def directmkdown(mdfile):
     """Convert MD file to HTML using markdown module and tables extension."""
-    html = markdownFromFile(mdfile, extensions=['markdown.extensions.tables'])
+    html = markdownFromFile(mdfile, extensions=["markdown.extensions.tables"])
     return html
 
 
@@ -124,7 +124,7 @@ def test_directmkdown():
 
 def mkpandoc(mkstring):
     """Convert MD to RST using the pypandoc module."""
-    output = pypandoc.convert(mkstring, 'rst', format='md')
+    output = pypandoc.convert(mkstring, "rst", format="md")
     return output
 
 
@@ -136,7 +136,7 @@ def test_mkpandoc():
 
 def source(mdfile):
     """Open a file containing example MD text."""
-    with open(mdfile, 'r') as f:
+    with open(mdfile, "r") as f:
         result = f.read()
     return result
 
@@ -148,7 +148,7 @@ def test_source():
 
 def output(htmlfile, html):
     """Write html to file."""
-    with open(htmlfile, 'w') as f:
+    with open(htmlfile, "w") as f:
         f.write(html)
     return True
 
@@ -158,9 +158,9 @@ def test_output():
     assert output(htmlfile, "</p>") is True
 
 
-if __name__ == '__main__':
-    green = '\033[92m'
-    end = '\033[0m'
+if __name__ == "__main__":
+    green = "\033[92m"
+    end = "\033[0m"
     mdfile = "example.md"
     mdtext = source(mdfile)
     print("\n" + green + "Standard Markdown:" + end)

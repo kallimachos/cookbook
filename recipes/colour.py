@@ -2,25 +2,25 @@
 """Escape codes for coloured console output."""
 
 
-black = '\033[30m'
-red = '\033[31m'
-green = '\033[32m'
-yellow = '\033[33m'
-blue = '\033[34m'
-purple = '\033[35m'
-cyan = '\033[36m'
-white = '\033[37m'
+black = "\033[30m"
+red = "\033[31m"
+green = "\033[32m"
+yellow = "\033[33m"
+blue = "\033[34m"
+purple = "\033[35m"
+cyan = "\033[36m"
+white = "\033[37m"
 
-bright_black = '\033[90m'
-bright_red = '\033[91m'
-bright_green = '\033[92m'
-bright_yellow = '\033[93m'
-bright_blue = '\033[94m'
-bright_purple = '\033[95m'
-bright_cyan = '\033[96m'
-bright_white = '\033[97m'
+bright_black = "\033[90m"
+bright_red = "\033[91m"
+bright_green = "\033[92m"
+bright_yellow = "\033[93m"
+bright_blue = "\033[94m"
+bright_purple = "\033[95m"
+bright_cyan = "\033[96m"
+bright_white = "\033[97m"
 
-end = '\033[0m'
+end = "\033[0m"
 
 """
 Effects
@@ -69,6 +69,8 @@ Use ; for multiple values: \033[96;4m
 100–107 Set bright background color
 """
 
-if __name__ == '__main__':
-    print("Hello! %sThis %sis %san %example %ssentence. %sHooray!"
-          % (blue, green, yellow, red, purple, end))
+if __name__ == "__main__":
+    print(
+        "Hello! %sThis %sis %san %example %ssentence. %sHooray!"
+        % (blue, green, yellow, red, purple, end)
+    )

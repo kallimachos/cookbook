@@ -11,10 +11,12 @@ def add(database):
     con = sql.connect(database)
     with con:
         cur = con.cursor()
-        cur.execute("""INSERT INTO Users VALUES (1, 'Brian', 123456789,
-                    'email@example.com', NULL)""")
+        cur.execute(
+            """INSERT INTO Users VALUES (1, 'Brian', 123456789,
+                    'email@example.com', NULL)"""
+        )
         resp = json.dumps(cur.rowcount)
-        return(resp)
+        return resp
 
 
 def createdb(database):
@@ -23,13 +25,15 @@ def createdb(database):
     with con:
         cur = con.cursor()
         cur.execute("""DROP TABLE IF EXISTS Users""")
-        cur.execute("""CREATE TABLE Users
+        cur.execute(
+            """CREATE TABLE Users
                     (id INTEGER PRIMARY KEY,
                     name TEXT NOT NULL,
                     phone INT,
                     email TEXT unique,
-                    image BLOB)""")
-    return(True)
+                    image BLOB)"""
+        )
+    return True
 
 
 def delete(database):
@@ -39,30 +43,30 @@ def delete(database):
         cur = con.cursor()
         cur.execute("DELETE FROM Users WHERE name = 'Brian'")
         resp = json.dumps(cur.rowcount)
-    return(resp)
+    return resp
 
 
 def test_createdb():
     """Test createdb()."""
-    assert createdb('example.sqlite') is True
+    assert createdb("example.sqlite") is True
 
 
 def test_add():
     """Test add()."""
-    assert add('example.sqlite') == '1'
+    assert add("example.sqlite") == "1"
 
 
 def test_delete():
     """Test delete()."""
-    assert delete('example.sqlite') == '1'
+    assert delete("example.sqlite") == "1"
 
 
 def test_cleanup():
     """Remove example.sqlite file."""
-    if path.exists('example.sqlite'):
-        remove('example.sqlite')
+    if path.exists("example.sqlite"):
+        remove("example.sqlite")
     assert True is True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

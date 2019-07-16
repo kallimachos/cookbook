@@ -17,16 +17,16 @@ import logging.config
 #          continue running.
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # load conf file
-    logging.config.fileConfig('log.conf')
+    logging.config.fileConfig("log.conf")
 
     # create logger
-    logger = logging.getLogger('simpleExample')
+    logger = logging.getLogger("simpleExample")
 
     # invoke logging in code
-    logger.debug('debug message')
-    logger.info('info message')
-    logger.warn('warn message')
-    logger.error('error message')
-    logger.critical('critical message')
+    logger.debug("debug message")
+    logger.info("info message")
+    logger.warn("warn message")
+    logger.error("error message")
+    logger.critical("critical message")

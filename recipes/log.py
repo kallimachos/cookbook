@@ -17,24 +17,25 @@ from os import path, remove
 #          continue running.
 
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    filename='example.log',
-                    filemode='w')
-logging.debug('This is a debug message')
-logging.info('This is an info message')
-logging.warning('This is a warning message')
-logging.error('This is an error message')
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s %(levelname)s %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    filename="example.log",
+    filemode="w",
+)
+logging.debug("This is a debug message")
+logging.info("This is an info message")
+logging.warning("This is a warning message")
+logging.error("This is an error message")
 
-message = 'variables'
+message = "variables"
 number = 5
-logging.critical('This is a critical message about %s using %s',
-                 number, message)
+logging.critical("This is a critical message about %s using %s", number, message)
 
 
 def test_cleanup():
     """Remove example.log file."""
-    if path.exists('example.log'):
-        remove('example.log')
+    if path.exists("example.log"):
+        remove("example.log")
     assert True is True
