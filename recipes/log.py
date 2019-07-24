@@ -1,7 +1,7 @@
 #!/bin/python3
 """Basic example using the logging module."""
 
-import logging
+import colorlog
 from os import path, remove
 
 # Log levels
@@ -16,26 +16,29 @@ from os import path, remove
 # CRITICAL A serious error, indicating that the program itself may be unable to
 #          continue running.
 
+logger = colorlog.getLogger()
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s %(levelname)s %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-    filename="example.log",
-    filemode="w",
-)
-logging.debug("This is a debug message")
-logging.info("This is an info message")
-logging.warning("This is a warning message")
-logging.error("This is an error message")
+def logconfig(level="INFO"):
+    """Set logging configuration.
 
-message = "variables"
-number = 5
-logging.critical("This is a critical message about %s using %s", number, message)
+    Args:
+        level (str, optional): log level to use
+
+    """
+    handler = colorlog.StreamHandler()
+    handler.setFormatter(
+        colorlog.ColoredFormatter("%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
+                                  datefmt="%Y-%m-%d %H:%M:%S")
+    )
+    logger.addHandler(handler)
+    logger.setLevel(level)
+    logger.debug("This is a debug message")
+    logger.info("This is an info message")
+    logger.warning("This is a warning message")
+    logger.error("This is an error message")
+    logger.critical("This is a critical message")
+    return logger.level
 
 
-def test_cleanup():
-    """Remove example.log file."""
-    if path.exists("example.log"):
-        remove("example.log")
-    assert True is True
+if __name__ == "__main__":
+    logconfig("DEBUG")
