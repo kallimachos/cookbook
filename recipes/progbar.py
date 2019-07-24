@@ -5,9 +5,10 @@
 import sys
 from time import sleep
 
-import progressbar
 from pytest import mark
 from tqdm import tqdm
+
+import progressbar
 
 examples = []
 

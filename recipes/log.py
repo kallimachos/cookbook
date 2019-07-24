@@ -1,8 +1,9 @@
 #!/bin/python3
 """Basic example using the logging module."""
 
-import colorlog
 from os import path, remove
+
+import colorlog
 
 # Log levels
 # DEBUG    Detailed information, typically of interest only when diagnosing
@@ -18,6 +19,7 @@ from os import path, remove
 
 logger = colorlog.getLogger()
 
+
 def logconfig(level="INFO"):
     """Set logging configuration.
 
@@ -27,8 +29,10 @@ def logconfig(level="INFO"):
     """
     handler = colorlog.StreamHandler()
     handler.setFormatter(
-        colorlog.ColoredFormatter("%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
-                                  datefmt="%Y-%m-%d %H:%M:%S")
+        colorlog.ColoredFormatter(
+            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S",
+        )
     )
     logger.addHandler(handler)
     logger.setLevel(level)

@@ -8,8 +8,9 @@ Demonstrates the markdown module and the pypandoc module.
 import sys
 from io import StringIO
 
-import pypandoc
 import pytest
+
+import pypandoc
 from markdown import markdown, markdownFromFile
 
 mdfile = "recipes/example.md"
