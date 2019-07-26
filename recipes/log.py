@@ -1,7 +1,7 @@
 #!/bin/python3
 """Basic example using the logging module."""
 
-from os import path, remove
+from os import path
 
 import colorlog
 

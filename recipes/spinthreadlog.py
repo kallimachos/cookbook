@@ -3,10 +3,10 @@
 #
 import asyncio
 import time
-import aiohttp
-import requests
 
+import aiohttp
 import colorlog
+import requests
 from logging_spinner import SpinnerHandler, UserWaitingFilter
 
 logger = colorlog.getLogger()
@@ -14,7 +14,7 @@ logger = colorlog.getLogger()
 
 def sample_program(interval):
     failure = True
-    logger.info("Processing", extra={'user_waiting': True})
+    logger.info("Processing", extra={"user_waiting": True})
     time.sleep(interval)
     logger.debug("This is a debug message")
     logger.info("This is an info message")
@@ -22,11 +22,11 @@ def sample_program(interval):
     logger.error("This is an error message")
     try:
         x = 1 / 0
-        logger.info("Still processing...", extra={'user_waiting': True})
+        logger.info("Still processing...", extra={"user_waiting": True})
         time.sleep(interval)
-        logger.info("OK Processing complete.", extra={'user_waiting': False})
+        logger.info("OK Processing complete.", extra={"user_waiting": False})
     except ZeroDivisionError as e:
-        logger.critical("FAIL Processing failed.", extra={'user_waiting': False})
+        logger.critical("FAIL Processing failed.", extra={"user_waiting": False})
         logger.error("You tried to divide by zero.")
         raise
 
@@ -78,10 +78,12 @@ def logconfig():
     logger.setLevel("INFO")
     stream_handler = colorlog.StreamHandler()
     stream_handler.addFilter(UserWaitingFilter())
-    stream_handler.setFormatter(colorlog.ColoredFormatter(
+    stream_handler.setFormatter(
+        colorlog.ColoredFormatter(
             "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
-        ))
+        )
+    )
     logger.addHandler(stream_handler)
 
 
@@ -91,13 +93,13 @@ if __name__ == "__main__":
     sites = [
         "http://www.jython.org",
         "http://olympus.realpython.org/dice",
-        "http://www.jython.org/asdfgdfsaf"
+        "http://www.jython.org/asdfgdfsaf",
     ] * 3
     logger.debug(sites)
-    logger.info("Running serial", extra={'user_waiting': True})
+    logger.info("Running serial", extra={"user_waiting": True})
     serial = run_serial(sites)
     print("Serial: %s sites in %s seconds" % serial)
-    logger.info("Running async", extra={'user_waiting': True})
+    logger.info("Running async", extra={"user_waiting": True})
     time.sleep(2)
     unsync = run_async(sites)
-    logger.info("Async:  %s sites in %s seconds" % unsync, extra={'user_waiting': False})
+    logger.info("Async:  %s sites in %s seconds" % unsync, extra={"user_waiting": False})
