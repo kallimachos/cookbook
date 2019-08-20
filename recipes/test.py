@@ -2,7 +2,7 @@
 """
 Pytest and hypothesis examples.
 
-Run using 'py.test pytest.py'
+Run using 'pytest test.py'
 """
 
 from hypothesis import given
