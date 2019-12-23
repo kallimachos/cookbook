@@ -10,28 +10,52 @@ import time
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
 
-def multithreading(func, session, x, workers):
-    with ThreadPoolExecutor(workers) as ex:
-        res = ex.map(func, session, x)
-    return list(res)
-
-
-def multiprocessing(func, session, x, workers):
-    with ProcessPoolExecutor(workers) as ex:
-        res = ex.map(func, session, x)
-    return list(res)
-
-
-def cpu_heavy(session, x):
+def cpu_heavy(x):
     count = x
     for i in range(10**8):
         count += i
     return x
 
 
+def cpu_serial(num):
+    result = []
+    for x in range(num):
+        result.append(cpu_heavy(x))
+    return result
+
+
+def cpu_multithreading(func, x, workers):
+    with ThreadPoolExecutor(workers) as ex:
+        res = ex.map(func, x)
+    return list(res)
+
+
+def cpu_multiprocessing(func, x, workers):
+    with ProcessPoolExecutor(workers) as ex:
+        res = ex.map(func, x)
+    return list(res)
+
+
 def io_heavy(session, x):
     with session.get(urls[x]) as response:
         return response
+
+
+def io_serial(session):
+    for x in range(n_jobs):
+        io_heavy(session, x)
+
+
+def io_multithreading(func, session, x, workers):
+    with ThreadPoolExecutor(workers) as ex:
+        res = ex.map(func, session, x)
+    return list(res)
+
+
+def io_multiprocessing(func, session, x, workers):
+    with ProcessPoolExecutor(workers) as ex:
+        res = ex.map(func, session, x)
+    return list(res)
 
 
 async def download_site(session, url):
@@ -54,18 +78,16 @@ def run_cpu_bound():
     num = 2
 
     start = time.time()
-    result = []
-    for x in range(num):
-        result.append(cpu_heavy(range(num), x))
-    print(f"Serial: {time.time() - start}")
+    cpu_serial(num)
+    print(f"{'Serial:':<16} {time.time() - start:.5f}")
 
     start = time.time()
-    result = multithreading(cpu_heavy, range(num), range(num), 4)
-    print(f"Multithreading: {time.time() - start}")
+    cpu_multithreading(cpu_heavy, range(num), num)
+    print(f"{'Multithreading:':<16} {time.time() - start:.5f}")
 
     start = time.time()
-    result = multiprocessing(cpu_heavy, range(num), range(num), 4)
-    print(f"Multiprocessing: {time.time() - start}")
+    cpu_multiprocessing(cpu_heavy, range(num), num if num <= 4 else 4)
+    print(f"{'Multiprocessing:':<16} {time.time() - start:.5f}")
 
 
 def run_io_bound():
@@ -73,21 +95,20 @@ def run_io_bound():
     session = requests.Session()
 
     start = time.time()
-    for x in range(n_jobs):
-        io_heavy(session, x)
-    print(f"Serial: {time.time() - start}")
+    io_serial(session)
+    print(f"{'Serial:':<16} {time.time() - start:.5f}")
 
     start = time.time()
-    multithreading(io_heavy, itertools.repeat(session), range(n_jobs), n_jobs)
-    print(f"Multithreading: {time.time() - start}")
+    io_multithreading(io_heavy, itertools.repeat(session), range(n_jobs), n_jobs)
+    print(f"{'Multithreading:':<16} {time.time() - start:.5f}")
 
     start = time.time()
     asyncio.run(download_all_sites(urls))
-    print(f"Asyncio: {time.time() - start}")
+    print(f"{'Asyncio:':<16} {time.time() - start:.5f}")
 
     start = time.time()
-    multiprocessing(io_heavy, itertools.repeat(session), range(n_jobs), 4)
-    print(f"Multiprocessing: {time.time() - start}")
+    io_multiprocessing(io_heavy, itertools.repeat(session), range(n_jobs), 4)
+    print(f"{'Multiprocessing:':<16} {time.time() - start:.5f}\n")
 
 
 if __name__ == "__main__":
@@ -97,5 +118,5 @@ if __name__ == "__main__":
     ] * 10
     n_jobs = len(urls)
 
-    # run_cpu_bound()
+    run_cpu_bound()
     run_io_bound()
