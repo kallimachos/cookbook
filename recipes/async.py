@@ -78,7 +78,7 @@ async def download_all_sites(sites):
     async with aiohttp.ClientSession() as session:
         tasks = []
         for url in sites:
-            task = asyncio.ensure_future(download_site(session, url))
+            task = asyncio.create_task(download_site(session, url))
             tasks.append(task)
         await asyncio.gather(*tasks, return_exceptions=True)
     return tasks
@@ -125,8 +125,8 @@ def run_io_bound():
 
 
 if __name__ == "__main__":
-    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 10
+    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 20
     n_jobs = len(urls)
 
-    # run_cpu_bound()
+    run_cpu_bound()
     run_io_bound()

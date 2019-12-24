@@ -1,6 +1,6 @@
-# #!/bin/python3
-# """Example using logging_spinner, colorlog, asyncio, and aiohttp modules."""
-#
+#!/bin/python3
+"""Example using logging_spinner, colorlog, asyncio, and aiohttp modules."""
+
 import asyncio
 import time
 
@@ -13,7 +13,7 @@ logger = colorlog.getLogger()
 
 
 def sample_program(interval):
-    failure = True
+    """Do something."""
     logger.info("Processing", extra={"user_waiting": True})
     time.sleep(interval)
     logger.debug("This is a debug message")
@@ -24,25 +24,30 @@ def sample_program(interval):
         x = 1 / 0
         logger.info("Still processing...", extra={"user_waiting": True})
         time.sleep(interval)
+        print(x)
         logger.info("OK Processing complete.", extra={"user_waiting": False})
-    except ZeroDivisionError as e:
+    except ZeroDivisionError:
         logger.critical("FAIL Processing failed.", extra={"user_waiting": False})
         logger.error("You tried to divide by zero.")
         raise
 
 
 def serial_download_site(session, url):
+    """Do something."""
     with session.get(url) as response:
-        pass
+        print(response)
+    return
 
 
 def serial_download_all_sites(sites):
+    """Do something."""
     with requests.Session() as session:
         for url in sites:
             serial_download_site(session, url)
 
 
 def run_serial(sites):
+    """Do something."""
     start_time = time.time()
     serial_download_all_sites(sites)
     duration = time.time() - start_time
@@ -50,6 +55,7 @@ def run_serial(sites):
 
 
 async def download_site(session, url):
+    """Do something."""
     async with session.get(url) as response:
         if response.status != 200:
             logger.error("%s - %s" % (response.status, url))
@@ -57,6 +63,7 @@ async def download_site(session, url):
 
 
 async def download_all_sites(sites):
+    """Do something."""
     async with aiohttp.ClientSession() as session:
         tasks = []
         for url in sites:
@@ -66,6 +73,7 @@ async def download_all_sites(sites):
 
 
 def run_async(sites):
+    """Do something."""
     start_time = time.time()
     asyncio.run(download_all_sites(sites))
     duration = time.time() - start_time
@@ -73,6 +81,7 @@ def run_async(sites):
 
 
 def logconfig():
+    """Do something."""
     handler = SpinnerHandler()
     logger.addHandler(handler)
     logger.setLevel("INFO")
@@ -80,7 +89,8 @@ def logconfig():
     stream_handler.addFilter(UserWaitingFilter())
     stream_handler.setFormatter(
         colorlog.ColoredFormatter(
-            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
+            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] "
+            "%(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
         )
     )

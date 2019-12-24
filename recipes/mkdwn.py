@@ -124,7 +124,7 @@ def test_directmkdown():
 
 def mkpandoc(mkstring):
     """Convert MD to RST using the pypandoc module."""
-    output = pypandoc.convert(mkstring, "rst", format="md")
+    output = pypandoc.convert_text(mkstring, "rst", format="md")
     return output
 
 

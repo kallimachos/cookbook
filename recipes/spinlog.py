@@ -1,7 +1,5 @@
-# #!/bin/python3
-# """Example using the logging_spinner and colorlog modules."""
-#
-import sys
+#!/bin/python3
+"""Example using the logging_spinner and colorlog modules."""
 import time
 
 import colorlog
@@ -11,7 +9,7 @@ logger = colorlog.getLogger()
 
 
 def sample_program(interval):
-    failure = True
+    """Run example program."""
     logger.info("Processing", extra={"user_waiting": True})
     time.sleep(interval)  # Some time-taking process
     logger.debug("This is a debug message")
@@ -22,14 +20,16 @@ def sample_program(interval):
         x = 1 / 0
         logger.info("Still processing...", extra={"user_waiting": True})
         time.sleep(interval)
+        print(x)
         logger.info("OK Processing complete.", extra={"user_waiting": False})
-    except ZeroDivisionError as e:
+    except ZeroDivisionError:
         logger.critical("FAIL Processing failed.", extra={"user_waiting": False})
         logger.error("You tried to divide by zero.")
         raise
 
 
 def main():
+    """Run the main function."""
     interval = 3
 
     # Setup a SpinnerHandler to application logger(s)
@@ -46,7 +46,8 @@ def main():
     # stream_handler.setLevel("DEBUG")
     stream_handler.setFormatter(
         colorlog.ColoredFormatter(
-            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
+            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] "
+            "%(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
         )
     )
