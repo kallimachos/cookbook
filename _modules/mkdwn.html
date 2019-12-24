@@ -167,11 +167,11 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">StringIO</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
 
 <span class="kn">import</span> <span class="nn">pypandoc</span>
 <span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">from</span> <span class="nn">markdown</span> <span class="k">import</span> <span class="n">markdown</span><span class="p">,</span> <span class="n">markdownFromFile</span>
+<span class="kn">from</span> <span class="nn">markdown</span> <span class="kn">import</span> <span class="n">markdown</span><span class="p">,</span> <span class="n">markdownFromFile</span>
 
 <span class="n">mdfile</span> <span class="o">=</span> <span class="s2">&quot;recipes/example.md&quot;</span>
 <span class="n">htmlfile</span> <span class="o">=</span> <span class="s2">&quot;recipes/example.html&quot;</span>
@@ -285,7 +285,7 @@
 
 <div class="viewcode-block" id="mkpandoc"><a class="viewcode-back" href="../mkdwn.html#mkdwn.mkpandoc">[docs]</a><span class="k">def</span> <span class="nf">mkpandoc</span><span class="p">(</span><span class="n">mkstring</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Convert MD to RST using the pypandoc module.&quot;&quot;&quot;</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">pypandoc</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">mkstring</span><span class="p">,</span> <span class="s2">&quot;rst&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;md&quot;</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">pypandoc</span><span class="o">.</span><span class="n">convert_text</span><span class="p">(</span><span class="n">mkstring</span><span class="p">,</span> <span class="s2">&quot;rst&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;md&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">output</span></div>
 
 
