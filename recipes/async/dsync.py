@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 """Async experiments."""
 
-import aiohttp
 import asyncio
 import time
+
+import aiohttp
 
 
 async def get(session, url):
     async with session.get(url) as response:
-        return(await response.text())
+        return await response.text()
 
 
 async def download_all_sites(sites):
@@ -23,10 +24,7 @@ async def download_all_sites(sites):
 
 
 if __name__ == "__main__":
-    sites = [
-        "http://www.jython.org",
-        "http://olympus.realpython.org/dice",
-    ] * 5
+    sites = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 5
     start_time = time.time()
     asyncio.run(download_all_sites(sites))
     duration = time.time() - start_time

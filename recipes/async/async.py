@@ -4,9 +4,9 @@
 
 import asyncio
 import time
+
 import aiohttp
 import requests
-
 from yaspin import yaspin
 
 
@@ -50,10 +50,7 @@ def run_async(sites):
 
 
 if __name__ == "__main__":
-    sites = [
-        "http://www.jython.org",
-        "http://olympus.realpython.org/dice",
-    ] * 20
+    sites = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 20
     with yaspin(text="Running serial", color="green") as spinner:
         serial = run_serial(sites)
         spinner.text = "Serial: %s sites in %s seconds" % serial

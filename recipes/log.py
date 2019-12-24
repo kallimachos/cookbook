@@ -1,8 +1,6 @@
 #!/bin/python3
 """Basic example using the logging module."""
 
-from os import path
-
 import colorlog
 
 # Log levels
@@ -30,7 +28,8 @@ def logconfig(level="INFO"):
     handler = colorlog.StreamHandler()
     handler.setFormatter(
         colorlog.ColoredFormatter(
-            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] %(message)s",
+            "%(asctime)s %(log_color)s%(levelname)-8s [%(filename)s:%(funcName)s:%(lineno)d] "
+            "%(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
         )
     )
