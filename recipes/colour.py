@@ -1,13 +1,13 @@
 #!/bin/python3
 """Escape codes for coloured console output."""
-
+from colorama import Fore
 
 black = "\033[30m"
 red = "\033[31m"
 green = "\033[32m"
 yellow = "\033[33m"
 blue = "\033[34m"
-purple = "\033[35m"
+magenta = "\033[35m"
 cyan = "\033[36m"
 white = "\033[37m"
 
@@ -16,7 +16,7 @@ bright_red = "\033[91m"
 bright_green = "\033[92m"
 bright_yellow = "\033[93m"
 bright_blue = "\033[94m"
-bright_purple = "\033[95m"
+bright_magenta = "\033[95m"
 bright_cyan = "\033[96m"
 bright_white = "\033[97m"
 
@@ -70,7 +70,8 @@ Use ; for multiple values: \033[96;4m
 """
 
 if __name__ == "__main__":
+    print(f"Hello! {blue}This {green}is {yellow}an {red}example {magenta}sentence. {end}Hooray!")
     print(
-        "Hello! %sThis %sis %san %example %ssentence. %sHooray!"
-        % (blue, green, yellow, red, purple, end)
+        f"Hello! {Fore.BLUE}This {Fore.GREEN}is {Fore.YELLOW}an {Fore.RED}example "
+        f"{Fore.MAGENTA}sentence {Fore.CYAN}using {Fore.RESET}colorama. Hooray!"
     )

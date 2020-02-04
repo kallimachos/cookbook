@@ -1,5 +1,6 @@
 aiohttp
 black
+colorama
 colorlog
 flake8-docstrings
 hypothesis
