@@ -80,8 +80,7 @@ async def download_all_sites(sites):
     async with aiohttp.ClientSession() as session:
         tasks = []
         for url in sites:
-            task = asyncio.create_task(download_site(session, url))
-            tasks.append(task)
+            tasks.append(download_site(session, url))
         await asyncio.gather(*tasks, return_exceptions=True)
     return tasks
 
