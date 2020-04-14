@@ -69,8 +69,10 @@ def io_multiprocessing(func, session, x, workers):
 
 async def download_site(session, url):
     """Async download."""
-    async with session.get(url) as response:
-        return response
+    # async with session.get(url) as response:
+    #     return response
+    response = await session.get(url)
+    return response
 
 
 async def download_all_sites(sites):
@@ -125,7 +127,7 @@ def run_io_bound():
 
 
 if __name__ == "__main__":
-    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 20
+    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 100
     n_jobs = len(urls)
 
     run_cpu_bound()
