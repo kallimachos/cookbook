@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Print system stats."""
-
 import platform
+
 import psutil
 from psutil._common import bytes2human
 
@@ -29,7 +29,9 @@ def system_stats():
         mem = psutil.virtual_memory()
         stats["Mem used"] = f"{bytes2human(mem.used)}/{bytes2human(mem.total)} - {mem.percent}%"
         disk = psutil.disk_usage("/")
-        stats["Disk used"] = f"{bytes2human(disk.used)}/{bytes2human(disk.total)} - {disk.percent}%"
+        stats[
+            "Disk used"
+        ] = f"{bytes2human(disk.used)}/{bytes2human(disk.total)} - {disk.percent}%"
         print_stats(stats)
     return
 

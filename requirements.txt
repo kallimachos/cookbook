@@ -1,5 +1,7 @@
 aiohttp
+APScheduler
 black
+bottle
 colorama
 colorlog
 flake8-docstrings
@@ -8,6 +10,7 @@ isort
 logging-spinner
 markdown
 progressbar2
+psutil
 pypandoc
 pytest
 pytest-cov
