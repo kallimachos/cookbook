@@ -5,6 +5,7 @@ Pytest and hypothesis examples.
 Run using 'pytest test.py'
 """
 
+import pytest
 from hypothesis import given
 from hypothesis.strategies import integers, text
 
@@ -34,37 +35,56 @@ def square(x):
 
 def mystring(s):
     """Return s."""
-    return s
+    return s + s
 
 
-# Tests in pytest format using hypothesis data generation
+# Test using hypothesis data generation
 
 
 @given(integers())
-def test_add(i):
+def test_add_h(i):
     """Test add."""
     assert add(i) == i + 1
 
 
 @given(integers())
-def test_square(i):
+def test_square_h(i):
     """Test square."""
     assert square(i) == i * i
 
 
 @given(text())
-def test_mystring(s):
+def test_mystring_h(s):
     """Test string."""
     x = mystring(s)
-    assert isinstance(x, str)
+    assert x == s + s
 
 
-def test_less_than():
-    """Test a less than equation."""
-    assert 2 < 5
+# Test using pytest parameters
 
 
-def test_repeat():
-    """Test using a for loop."""
-    for x in range(10):
-        assert x != 11
+@pytest.mark.parametrize(
+    "value, result",
+    [(1, 2), (2, 3), (3, 4)],
+)
+def test_add_p(value, result):
+    """Test add."""
+    assert add(value) == result
+
+
+@pytest.mark.parametrize(
+    "value, result",
+    [(1, 1), (2, 4), (3, 9)],
+)
+def test_square_p(value, result):
+    """Test add."""
+    assert square(value) == result
+
+
+@pytest.mark.parametrize(
+    "value, result",
+    [("hi", "hihi"), ("bye", "byebye")],
+)
+def test_mystring_p(value, result):
+    """Test add."""
+    assert mystring(value) == result
