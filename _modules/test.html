@@ -169,6 +169,7 @@
 <span class="sd">Run using &#39;pytest test.py&#39;</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">from</span> <span class="nn">hypothesis</span> <span class="kn">import</span> <span class="n">given</span>
 <span class="kn">from</span> <span class="nn">hypothesis.strategies</span> <span class="kn">import</span> <span class="n">integers</span><span class="p">,</span> <span class="n">text</span>
 
@@ -198,40 +199,59 @@
 
 <div class="viewcode-block" id="mystring"><a class="viewcode-back" href="../test.html#test.mystring">[docs]</a><span class="k">def</span> <span class="nf">mystring</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return s.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">s</span></div>
+    <span class="k">return</span> <span class="n">s</span> <span class="o">+</span> <span class="n">s</span></div>
 
 
-<span class="c1"># Tests in pytest format using hypothesis data generation</span>
+<span class="c1"># Test using hypothesis data generation</span>
 
 
-<div class="viewcode-block" id="test_add"><a class="viewcode-back" href="../test.html#test.test_add">[docs]</a><span class="nd">@given</span><span class="p">(</span><span class="n">integers</span><span class="p">())</span>
-<span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<div class="viewcode-block" id="test_add_h"><a class="viewcode-back" href="../test.html#test.test_add_h">[docs]</a><span class="nd">@given</span><span class="p">(</span><span class="n">integers</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">test_add_h</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test add.&quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span></div>
 
 
-<div class="viewcode-block" id="test_square"><a class="viewcode-back" href="../test.html#test.test_square">[docs]</a><span class="nd">@given</span><span class="p">(</span><span class="n">integers</span><span class="p">())</span>
-<span class="k">def</span> <span class="nf">test_square</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<div class="viewcode-block" id="test_square_h"><a class="viewcode-back" href="../test.html#test.test_square_h">[docs]</a><span class="nd">@given</span><span class="p">(</span><span class="n">integers</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">test_square_h</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test square.&quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">square</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span></div>
 
 
-<div class="viewcode-block" id="test_mystring"><a class="viewcode-back" href="../test.html#test.test_mystring">[docs]</a><span class="nd">@given</span><span class="p">(</span><span class="n">text</span><span class="p">())</span>
-<span class="k">def</span> <span class="nf">test_mystring</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="viewcode-block" id="test_mystring_h"><a class="viewcode-back" href="../test.html#test.test_mystring_h">[docs]</a><span class="nd">@given</span><span class="p">(</span><span class="n">text</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">test_mystring_h</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test string.&quot;&quot;&quot;</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">mystring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span></div>
+    <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="n">s</span> <span class="o">+</span> <span class="n">s</span></div>
 
 
-<div class="viewcode-block" id="test_less_than"><a class="viewcode-back" href="../test.html#test.test_less_than">[docs]</a><span class="k">def</span> <span class="nf">test_less_than</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Test a less than equation.&quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">5</span></div>
+<span class="c1"># Test using pytest parameters</span>
 
 
-<div class="viewcode-block" id="test_repeat"><a class="viewcode-back" href="../test.html#test.test_repeat">[docs]</a><span class="k">def</span> <span class="nf">test_repeat</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Test using a for loop.&quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">11</span></div>
+<div class="viewcode-block" id="test_add_p"><a class="viewcode-back" href="../test.html#test.test_add_p">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;value, result&quot;</span><span class="p">,</span>
+    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_add_p</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test add.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="test_square_p"><a class="viewcode-back" href="../test.html#test.test_square_p">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;value, result&quot;</span><span class="p">,</span>
+    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_square_p</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test add.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">square</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="test_mystring_p"><a class="viewcode-back" href="../test.html#test.test_mystring_p">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;value, result&quot;</span><span class="p">,</span>
+    <span class="p">[(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hihi&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="s2">&quot;byebye&quot;</span><span class="p">)],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_mystring_p</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test add.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">mystring</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">result</span></div>
 </pre></div>
 
            </div>
