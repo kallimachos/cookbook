@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>mkdwn &mdash; Cookbook 1.0 documentation</title>
   
@@ -17,7 +18,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -27,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -52,7 +56,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Cookbook
+            <a href="index.html" class="icon icon-home"> Cookbook
           
 
           
@@ -140,6 +144,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -151,7 +157,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/mkdwn.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -165,108 +171,100 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-mkdwn">
+  <section id="module-mkdwn">
 <span id="mkdwn"></span><h1>mkdwn<a class="headerlink" href="#module-mkdwn" title="Permalink to this headline">¶</a></h1>
 <p>Conversion options for working with Markdown in Python.</p>
 <p>Demonstrates the markdown module and the pypandoc module.</p>
 <dl class="py function">
-<dt id="mkdwn.directmkdown">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">directmkdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mdfile</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#directmkdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.directmkdown" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.directmkdown">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">directmkdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#directmkdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.directmkdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert MD file to HTML using markdown module and tables extension.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.mkdown">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">mkdown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mdtext</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#mkdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.mkdown" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.mkdown">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">mkdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdtext</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#mkdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.mkdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert MD to HTML using the markdown module and tables extension.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.mkpandoc">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">mkpandoc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mkstring</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#mkpandoc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.mkpandoc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.mkpandoc">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">mkpandoc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mkstring</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#mkpandoc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.mkpandoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert MD to RST using the pypandoc module.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.output">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">htmlfile</span></em>, <em class="sig-param"><span class="n">html</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.output" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.output">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">htmlfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write html to file.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.source">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">source</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mdfile</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.source" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.source">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.source" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open a file containing example MD text.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.test_directmkdown">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">test_directmkdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_directmkdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.test_directmkdown" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.test_directmkdown">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">test_directmkdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_directmkdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.test_directmkdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test directmkdown.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.test_mkdown">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">test_mkdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_mkdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.test_mkdown" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.test_mkdown">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">test_mkdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_mkdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.test_mkdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test mkdown.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.test_mkpandoc">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">test_mkpandoc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_mkpandoc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.test_mkpandoc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.test_mkpandoc">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">test_mkpandoc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_mkpandoc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.test_mkpandoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test pandoc.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.test_output">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">test_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.test_output" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.test_output">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">test_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.test_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test output.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="mkdwn.test_source">
-<code class="sig-prename descclassname">mkdwn.</code><code class="sig-name descname">test_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mkdwn.test_source" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mkdwn.test_source">
+<span class="sig-prename descclassname"><span class="pre">mkdwn.</span></span><span class="sig-name descname"><span class="pre">test_source</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mkdwn.html#test_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mkdwn.test_source" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test source.</p>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="pp_json.html" class="btn btn-neutral float-right" title="pp_json" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="log.html" class="btn btn-neutral float-left" title="log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="pp_json.html" class="btn btn-neutral float-right" title="pp_json" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="log.html" class="btn btn-neutral float-left" title="log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, Brian Moss
+        &#169; Copyright 2019, Brian Moss.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
