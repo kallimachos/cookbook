@@ -128,6 +128,5 @@ def run_io_bound():
 if __name__ == "__main__":
     urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 100
     n_jobs = len(urls)
-
     run_cpu_bound()
     run_io_bound()
