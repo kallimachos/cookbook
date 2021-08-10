@@ -3,7 +3,7 @@
 
 import colorlog
 
-# Log levels
+# Log levels  -  https://docs.python.org/3/howto/logging.html#when-to-use-logging
 # DEBUG    Detailed information, typically of interest only when diagnosing
 #          problems.
 # INFO 	   Confirmation that things are working as expected.
