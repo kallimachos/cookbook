@@ -1,3 +1,4 @@
+aiofiles
 aiohttp
 APScheduler
 black

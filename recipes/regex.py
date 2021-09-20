@@ -8,7 +8,7 @@ import re
 TEXT = re.compile(r"(?:https?:|\/img\/)\S*\w/?")
 
 # <a> and <img> links in HTML
-HTML = re.compile(r'(?:<a href=\"|<img.*src=\")(\S*\w/?)\"')
+HTML = re.compile(r"(?:<a href=\"|<img.*src=\")(\S*\w/?)\"")
 
 text = """## A heading [example link](http://example.com)
 
@@ -27,7 +27,7 @@ A jira link: [TSWRITING-577](https://jira.mongodb.org/browse/TSWRITING-577 "Sync
 Here is a [example link](http://example.com/afadsfasdfads) in a code block.
 Here is a [broken link](http://exampasdfasd3343333f.com) in a code block.
 http://example.com
-```"""
+```"""  # noqa: E501
 
 html = """<h2>A heading <a href="http://example.com">example link</a></h2>
 <p>Here is a <a href="https://docs.mongodb.com/manual/tutorial/getting-started/">example link</a> and another <a href="https://docs.mongodb.com/manual/core/schema-validation/">cool link</a></p>
@@ -38,7 +38,7 @@ html = """<h2>A heading <a href="http://example.com">example link</a></h2>
 <img alt="a missing image" src="/img/TSWRITING-921_2.png" /></p>
 <p><code>Here is a [example link](http://example.com/afadsfasdfads) in a code block.
 Here is a [broken link](http://exampasdfasd3343333f.com) in a code block.
-http://example.com</code></p>"""
+http://example.com</code></p>"""  # noqa: E501
 
 textlinks = re.findall(TEXT, text)
 htmllinks = re.findall(HTML, html)
