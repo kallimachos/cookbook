@@ -21,7 +21,7 @@ async def download_all_sites(sites):
         tasks = []
         for url in sites:
             tasks.append(download_site(session, url))
-        result = await tqdm.gather(tasks)
+        result = await tqdm.gather(*tasks)
         # result = [
         #     await f
         #     for f in tqdm(asyncio.as_completed(tasks), total=len(tasks))

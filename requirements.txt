@@ -19,5 +19,5 @@ pytest-flake8
 pytest-xdist
 requests
 sh
-tqdm
+tqdm>=4.62.0
 yaspin
