@@ -29,11 +29,11 @@ async def download_all_sites(sites):
 
 
 if __name__ == "__main__":
-    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 50
+    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 100
     start = time.time()
     result = asyncio.run(download_all_sites(urls))
-    # for r in result:
-    #     print(f"{r[0].url}: {r[0].status}")
-    #     print(f"{r[1].url}: {r[1].status_code}")
+    for r in result:
+        print(f"{r[0].url}: {r[0].status}")
+        print(f"{r[1].url}: {r[1].status_code}")
     print(f"{'Results:':<10} {len(result)}")
     print(f"{'Seconds:':<10} {time.time() - start:.5f}")

@@ -11,6 +11,10 @@ import aiohttp
 import requests
 
 
+urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 10
+n_jobs = len(urls)
+
+
 def cpu_heavy(x):
     """Perform a CPU heavy task."""
     count = x
@@ -126,7 +130,5 @@ def run_io_bound():
 
 
 if __name__ == "__main__":
-    urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 100
-    n_jobs = len(urls)
-    run_cpu_bound()
+    # run_cpu_bound()
     run_io_bound()
