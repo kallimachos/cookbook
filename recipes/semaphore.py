@@ -31,7 +31,7 @@ async def read_file(fname, sema):
 
 async def tasks():
     """Run tasks."""
-    sema = asyncio.Semaphore(100)  # Allow 3 concurrent writers
+    sema = asyncio.Semaphore(100)  # Allow 100 concurrent writers
     # tasks = [asyncio.create_task(write_to_disk(f"{i}.txt", sema)) for i in range(10000)]
     tasks = [asyncio.create_task(read_file(f"{i}.txt", sema)) for i in range(10000)]
     await asyncio.gather(*tasks)
