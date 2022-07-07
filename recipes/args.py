@@ -20,7 +20,7 @@ if __name__ == "__main__":
     parser.add_argument("x", type=int, help="the base")
     parser.add_argument("y", type=int, help="the exponent")
     args = parser.parse_args()
-    answer = args.x ** args.y
+    answer = args.x**args.y
 
     if args.quiet:
         print(answer)

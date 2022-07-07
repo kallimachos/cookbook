@@ -1,8 +1,11 @@
-import requests
+"""Multithread."""
 from concurrent.futures import ThreadPoolExecutor
+
+import requests
 
 
 def get_url(url):
+    """Get URL."""
     return requests.get(url)
 
 

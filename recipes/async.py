@@ -10,7 +10,6 @@ from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 import aiohttp
 import requests
 
-
 urls = ["http://www.jython.org", "http://olympus.realpython.org/dice"] * 10
 n_jobs = len(urls)
 
@@ -18,7 +17,7 @@ n_jobs = len(urls)
 def cpu_heavy(x):
     """Perform a CPU heavy task."""
     count = x
-    for i in range(10 ** 8):
+    for i in range(10**8):
         count += i
     return x
 
