@@ -1,7 +1,7 @@
 #!/bin/python3
 """Basic example using structlog."""
 
-from logging import DEBUG, INFO
+from logging import DEBUG, ERROR
 
 import structlog
 
@@ -28,6 +28,8 @@ def logconfig(debug=False, console=False):
         console (bool, optional): True if logging to console.
 
     """
+    loglevel = DEBUG
+    processors = [structlog.processors.add_log_level]
     call_processor = [
         structlog.processors.CallsiteParameterAdder(
             parameters={
@@ -38,21 +40,20 @@ def logconfig(debug=False, console=False):
             }
         ),
     ]
-    if console:
-        level_styles = structlog.dev.ConsoleRenderer.get_default_level_styles()
-        del level_styles["debug"]
-        processors = call_processor if debug else []
-        processors.append(structlog.dev.ConsoleRenderer(level_styles=level_styles))
+    if console and debug:
+        processors += call_processor + [structlog.dev.ConsoleRenderer()]
+    elif console and not debug:
+        loglevel = ERROR
+        processors += [structlog.dev.ConsoleRenderer()]
     else:
-        processors = call_processor + [
+        processors += [
             structlog.processors.TimeStamper(fmt="iso", utc=True),
             structlog.processors.format_exc_info,
             structlog.processors.JSONRenderer(),
         ]
-    loglevel = DEBUG if debug else INFO
     structlog.configure(
         wrapper_class=structlog.make_filtering_bound_logger(loglevel),
-        processors=[structlog.processors.add_log_level] + processors,
+        processors=processors,
     )
     logger.debug("This is a debug message")
     logger.info("This is an info message")
@@ -67,4 +68,5 @@ def logconfig(debug=False, console=False):
 
 
 if __name__ == "__main__":
-    logconfig(True, True)
+    logconfig(debug=True, console=True)
+    logconfig(debug=True, console=False)
