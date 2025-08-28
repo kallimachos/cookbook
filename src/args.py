@@ -21,9 +21,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     answer = args.x**args.y
 
-    if args.quiet:
-        pass
-    elif args.verbose:
+    if args.quiet or args.verbose:
         pass
     else:
         pass

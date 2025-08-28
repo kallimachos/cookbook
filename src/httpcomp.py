@@ -35,8 +35,6 @@ with httpx.Client(http2=True, follow_redirects=True) as client:
     end_time = time.perf_counter()
 
 
-
-
 async def get() -> None:
     async with httpx.AsyncClient(follow_redirects=True) as client:
         time.perf_counter()
@@ -58,7 +56,6 @@ async def get() -> None:
 
 
 asyncio.run(get())
-
 
 
 async def post() -> None:

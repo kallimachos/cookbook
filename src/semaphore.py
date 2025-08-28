@@ -17,7 +17,7 @@ async def write_to_disk(fname, sema) -> None:
 async def read_file(fname, sema):
     """Async read."""
     filepath = Path("files", fname)
-    async with sema, aiofiles.open(filepath, "r") as f:
+    async with sema, aiofiles.open(filepath) as f:
         return await f.read()
 
 

@@ -36,5 +36,3 @@ def run_io_bound() -> None:
 
 if __name__ == "__main__":
     run_io_bound()
-
-

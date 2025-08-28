@@ -2,7 +2,6 @@ aiofiles
 aiohttp
 APScheduler
 bottle
-colorama
 colorlog
 httpx[http2]
 hypothesis

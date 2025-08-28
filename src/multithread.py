@@ -1,4 +1,5 @@
 """Multithread."""
+
 from concurrent.futures import ThreadPoolExecutor
 
 import requests

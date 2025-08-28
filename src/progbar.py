@@ -135,8 +135,7 @@ def example2() -> bool:
             """
             if 45 < pbar.percentage() < 80:
                 return "Bigger Now " + progressbar.FileTransferSpeed.update(self, pbar)
-            else:
-                return progressbar.FileTransferSpeed.update(self, pbar)
+            return progressbar.FileTransferSpeed.update(self, pbar)
 
     widgets = [
         CrazyFileTransferSpeed(),

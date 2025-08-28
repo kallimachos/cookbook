@@ -2,7 +2,7 @@
 line-length = 99
 
 [tool.deptry]
-requirements_txt = ["src/requirements.txt"]
+requirements_files = ["src/requirements.txt"]
 
 [tool.deptry.per_rule_ignores]
 DEP003 = ["httpx"]

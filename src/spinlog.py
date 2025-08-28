@@ -1,5 +1,6 @@
 #!/bin/python3
 """Example using the logging_spinner and colorlog modules."""
+
 import time
 
 import colorlog

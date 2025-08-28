@@ -41,4 +41,3 @@ http://example.com</code></p>"""  # noqa: E501
 
 textlinks = re.findall(TEXT, text)
 htmllinks = re.findall(HTML, html)
-

@@ -2,8 +2,9 @@
 """Basic example using structlog."""
 
 import requests
-import slog
 import structlog
+
+import slog
 import tlog
 
 logger = structlog.get_logger()
